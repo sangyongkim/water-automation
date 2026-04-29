@@ -1,0 +1,44 @@
+ID 형산강권역 2026/04/12 (DESIGN RAINFALL)
+ID 곡천 등 19개 하천기본계획(재수립)
+ID CLARK UNIT HYDROGRAPH METHOD
+IT    10 13JUL12    1800     300
+IO     5       0
+IM
+PG    IA   31.21
+PG    IB   30.69
+PG    IC   33.62
+PG    ID   33.40
+PG    IE   32.18
+PG    IF   34.67
+PG    IG   32.11
+PG    IH   31.31
+PG    II   45.96
+PG    IJ   38.70
+PG    IK   36.98
+PG    IL   36.20
+PG    IM   32.80
+PG DUMMY       0
+PG HUFF1       0
+PC   .00    5.46   15.10   33.36   65.84   93.25  100.00
+*
+KK HS00B
+KM HS00 유역추적
+BA  8.17
+PR HUFF1
+PW 1.000
+PT    IA      II      IJ   DUMMY
+PW 0.000   0.797   0.203   0.000
+LS          89.3
+UC  0.46    0.65
+*
+KK HS01B
+KM HS01 유역추적
+BA  6.88
+PR HUFF1
+PW 1.000
+PT    IA      II      IJ   DUMMY
+PW 0.000   0.759   0.241   0.000
+LS          88.8
+UC  0.39    0.55
+*
+ZZ
