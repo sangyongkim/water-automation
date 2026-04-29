@@ -10,5 +10,17 @@ const toolsData = [
         filePath: "tools/hec1-auto/dist/hec1_auto_v0.6_dist.zip",
         tags: ["HEC-1", "임계지속기간", "홍수량산정", "배포판"]
     }
+    ,
+    {
+        id: 2,
+        title: "HEC-RAS CAD Bridge",
+        description: "HEC-RAS 홍수 해석 결과와 AutoCAD 횡단면 도면을 자동 연동하는 도구입니다. Geometry → DXF 내보내기, 계획단면 → HEC-RAS 업데이트, 홍수위 자동 추출 및 DXF 갱신을 지원합니다. (v1.3 배포판)",
+        version: "v1.3.0",
+        date: "2026-04-29",
+        category: "수리해석",
+        fileName: "hecras_launcher_v1.3.zip",
+        filePath: "tools/hecras-cad-bridge/dist/hecras_launcher_v1.3.zip",
+        tags: ["HEC-RAS", "AutoCAD", "DXF", "횡단면", "홍수위", "배포판"]
+    }
     // 여기에 새로운 도구를 추가하세요
 ];
