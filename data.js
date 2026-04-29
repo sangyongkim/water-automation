@@ -7,7 +7,7 @@ const toolsData = [
         date: "2026-04-29",
         category: "수문해석",
         fileName: "hec1_auto_v0.6_dist.zip",
-        filePath: "downloads/hec1_auto_v0.6_dist.zip",
+        filePath: "tools/hec1-auto/dist/hec1_auto_v0.6_dist.zip",
         tags: ["HEC-1", "임계지속기간", "홍수량산정", "배포판"]
     }
     // 여기에 새로운 도구를 추가하세요
