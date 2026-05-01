@@ -23,16 +23,5 @@ const toolsData = [
         tags: ["HEC-RAS", "AutoCAD", "DXF", "횡단면", "홍수위", "배포판"]
     }
     ,
-    {
-        id: 3,
-        title: "WAMIS 시강우 수집기",
-        description: "WAMIS 강우관측소의 시강우 데이터를 자동으로 수집하여 CSV로 저장하는 도구입니다. 6개월 조회 제한을 자동 분할하여 장기간 데이터를 연속 수집하며, 5개 관할기관(K-water·기상청·환경부·농어촌공사·한수원) 관측소를 모두 지원합니다. (v1.0 배포판)",
-        version: "v1.0.0",
-        date: "2026-04-29",
-        category: "수문해석",
-        fileName: "wamis_rainfall_v1.0.zip",
-        filePath: "tools/wamis-rainfall/dist/wamis_rainfall_v1.0.zip",
-        tags: ["WAMIS", "시강우", "강우관측소", "자동수집", "배포판"]
-    }
     // 여기에 새로운 도구를 추가하세요
 ];
