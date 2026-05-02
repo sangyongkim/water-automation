@@ -25,18 +25,6 @@ const toolsData = [
     ,
     {
         id: 3,
-        title: "WAMIS 시강우 수집기",
-        description: "WAMIS 강우관측소의 시강우 데이터를 자동으로 수집하여 CSV로 저장하는 도구입니다. 6개월 조회 제한을 자동 분할하여 장기간 데이터를 연속 수집하며, 5개 관할기관(K-water·기상청·환경부·농어촌공사·한수원) 관측소를 모두 지원합니다. (v1.0 배포판)",
-        version: "v1.0.0",
-        date: "2026-04-29",
-        category: "수문해석",
-        fileName: "wamis_rainfall_v1.0.zip",
-        filePath: "tools/wamis-rainfall/dist/wamis_rainfall_v1.0.zip",
-        tags: ["WAMIS", "시강우", "강우관측소", "자동수집", "배포판"]
-    }
-    ,
-    {
-        id: 4,
         title: "HEC-RAS 횡단면 지형데이터 생성기",
         description: "측량 횡단 야장(CSV)을 입력받아 HEC-RAS Geometry 파일(.g01)과 프로젝트 파일(.prj)을 자동 생성하는 도구입니다. 거리형·No형 측점, Bank Station, Levee, Manning's n, 구조물 Description을 자동 처리하며 HEC-RAS 5.x 포맷에 완전 호환됩니다. (v1.0 배포판)",
         version: "v1.0.0",
