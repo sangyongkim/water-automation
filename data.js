@@ -2,7 +2,7 @@ const toolsData = [
     {
         id: 1,
         title: "HEC-1 자동화 도구",
-        description: "HEC-1을 사용하여 임계지속기간을 산정하고 각 빈도별 홍수량을 자동으로 추출하는 도구입니다. (v0.6 배포판)",
+        description: "HEC-1을 사용하여 임계지속기간을 산정하고 각 빈도별 홍수량을 자동으로 추출하는 도구입니다. (v0.7 배포판)",
         version: "v0.7.0",
         date: "2026-05-24",
         category: "수문해석",
