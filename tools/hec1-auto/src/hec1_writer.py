@@ -141,7 +141,8 @@ def _basin_body_stations(basin: dict, arf: float) -> list:
 def _make_reservoir(res: dict) -> list:
     lines = []
     lines.append(f"KK {res['name']}")
-    lines.append(_fmt("RS", 1, "STOR"))
+    init_elev = res['elevation'][0]  # SE 테이블 최솟값을 초기 수위로 사용
+    lines.append(_fmt("RS", 1, "STOR", init_elev))
 
     for sv_chunk in [res['storage'][i:i+10] for i in range(0, len(res['storage']), 10)]:
         line = "SV"
@@ -154,16 +155,31 @@ def _make_reservoir(res: dict) -> list:
         for j, v in enumerate(se_chunk):
             line += f"{v:6.2f}" if j == 0 else f"{v:8.2f}"
         lines.append(line)
-
+            
     if res.get('stage_discharge'):
-        # 옵션 2: SQ 카드 — 수위-방류량 테이블 직접 입력 (5쌍/줄)
-        flat = [x for pair in res['stage_discharge'] for x in pair]
-        for i in range(0, len(flat), 10):
-            chunk = flat[i:i + 10]
+        # 옵션 2: SQ 카드 — 수위-방류량 테이블 직접 입력
+         
+        # 방어 코드: elevation 기준으로 정렬 및 누락 수위 체크
+        sd_dict = dict(res['stage_discharge'])  # {수위: 방류량}
+    
+        missing = [elev for elev in res['elevation'] if elev not in sd_dict]
+        if missing:
+            raise ValueError(f"[{res['name']}] stage_discharge에 누락된 수위값: {missing}")
+    
+        extra = [s for s in sd_dict if s not in res['elevation']]
+        if extra:
+            raise ValueError(f"[{res['name']}] elevation에 없는 stage_discharge 수위값: {extra}")
+    
+        # SE 순서 기준으로 방류량만 추출
+        discharges = [sd_dict[elev] for elev in res['elevation']]
+    
+        for i in range(0, len(discharges), 10):
+            chunk = discharges[i:i + 10]
             line  = "SQ"
             for j, v in enumerate(chunk):
                 line += f"{float(v):6.2f}" if j == 0 else f"{float(v):8.2f}"
             lines.append(line)
+            
     else:
         # 옵션 1: SS 카드 — 방류공식 Q = C × L × (WSE − E₀)^n
         ss   = res['spillway']

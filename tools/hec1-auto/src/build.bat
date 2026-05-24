@@ -21,10 +21,7 @@ if exist dist    rmdir /s /q dist
 if exist hec1_auto.spec    del hec1_auto.spec
 if exist make_template.spec del make_template.spec
 
-set COMMON=--onefile --noconfirm ^
-  --collect-data openpyxl ^
-  --hidden-import excel_loader ^
-  --hidden-import openpyxl.cell._writer
+set COMMON=--onefile --noconfirm --collect-data openpyxl --hidden-import excel_loader --hidden-import openpyxl.cell._writer
 
 echo [1/2] hec1_auto.exe 빌드 중...
 pyinstaller %COMMON% --name hec1_auto main.py
